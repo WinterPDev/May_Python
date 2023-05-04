@@ -1,16 +1,31 @@
-from flask import Flask  # Import Flask to allow us to create our app
+from flask import Flask, render_template  # Import Flask to allow us to create our app
 
 app = Flask(__name__)    # Create a new instance of the Flask class called "app"
 
 
-@app.route('/home')
+@app.route('/')
 def home():
-    return 'This is the Home Page! 🎃'
+    return render_template('index.html', phrase='hello', times=10)
 
 # butkus
-@app.route('/hello/<petname>/<favFood>')
+@app.route('/hello/<petname>/<favfood>')
 def petname(petname, favFood):
     return f"Hello to {petname}! Their favorite food is {favFood}"
+
+@app.route('/lists')
+def render_lists():
+    # Soon enough, we'll get data from a database, but for now, we're hard coding data
+    andrew_data = {
+        'first_name' : 'Andrew',
+        'last_name' : 'Tran',
+        'education' : 'Coding Dojo Bootcamp!',
+        'projects' : 'TBD',
+        'contact' : 'andrew@tran.com'
+    }
+
+    return render_template("lists.html", andrew_data=andrew_data, bg_color='teal')
+
+
 
 if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    
     app.run(debug=True, port=5001)    # Run the app in debug mode.

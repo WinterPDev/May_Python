@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's my Flask Form!</title>
+</head>
+<body>
+    
+    <h2>Enter Your Favorite Movie</h2>
+
+    <form action="/submit_form" method="post">
+        <div>
+            <label for="title">Title :</label>
+            <input type="text" name="title" placeholder="Enter Title">
+        </div>
+        <div>
+            <label for="genre">Genre :</label>
+            <input type="text" name="genre">
+        </div>
+        <div>
+            <label for="release_year">Year of Release :</label>
+            <input type="text" name="release_year">
+        </div>
+        <div>
+            <label for="movie_length">Movie Length :</label>
+            <input type="time" name="movie_length">
+        </div>
+        
+        <input type="submit" value="Submit Favorite Movie">
+
+    </form>
+
+
+</body>
+</html>

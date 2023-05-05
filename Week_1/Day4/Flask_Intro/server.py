@@ -1,13 +1,12 @@
 from flask import Flask, render_template  # Import Flask to allow us to create our app
 
 app = Flask(__name__)    # Create a new instance of the Flask class called "app"
-
+app.secret_key = 'keepitsecret' # We'll need this for our sessions! It's a lightweight cookie encryption
 
 @app.route('/')
 def home():
     return render_template('index.html', phrase='hello', times=10)
 
-# butkus
 @app.route('/hello/<petname>/<favfood>')
 def petname(petname, favFood):
     return f"Hello to {petname}! Their favorite food is {favFood}"

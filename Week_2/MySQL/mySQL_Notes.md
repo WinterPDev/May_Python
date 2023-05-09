@@ -1,4 +1,4 @@
-'''
+
 
 
 ERD ( Entity Relationship Diagram )
@@ -13,4 +13,3 @@ ID (Primary Key) : The identifier for the piece of information that is unique to
 ---> Set the defaults for updated_at as 'NOW() ON UPDATE NOW()'
 
 
-'''
